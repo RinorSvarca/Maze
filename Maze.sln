@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maze", "Maze\CameraExample\Maze.csproj", "{A30708DD-A61A-4C2E-9A72-6CC9989D3FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenseless.Base", "ZenselessSourceAppEmpty4\Zenseless.Base\Zenseless.Base.csproj", "{481F886F-DA6F-445E-BA83-C276646A0B16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenseless.ContentPipeline", "ZenselessSourceAppEmpty4\Zenseless.ContentPipeline\Zenseless.ContentPipeline.csproj", "{188903C5-DC11-483B-8BAA-25AB1D7A57F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenseless.Geometry", "ZenselessSourceAppEmpty4\Zenseless.Geometry\Zenseless.Geometry.csproj", "{2C1AEEFC-3559-4391-8909-F546D006A27C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenseless.HLGL", "ZenselessSourceAppEmpty4\Zenseless.HLGL\Zenseless.HLGL.csproj", "{8E564B23-43E0-44C7-B921-53C23C79CB79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenseless.OpenGL", "ZenselessSourceAppEmpty4\Zenseless.OpenGL\Zenseless.OpenGL.csproj", "{20BD3F8A-0948-4D9F-AAA6-84D366730169}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zenseless.Sound", "ZenselessSourceAppEmpty4\Zenseless.Sound\Zenseless.Sound.csproj", "{10E2D3ED-A669-4ADB-892E-7B13C7B52CA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A30708DD-A61A-4C2E-9A72-6CC9989D3FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30708DD-A61A-4C2E-9A72-6CC9989D3FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30708DD-A61A-4C2E-9A72-6CC9989D3FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30708DD-A61A-4C2E-9A72-6CC9989D3FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{481F886F-DA6F-445E-BA83-C276646A0B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481F886F-DA6F-445E-BA83-C276646A0B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481F886F-DA6F-445E-BA83-C276646A0B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481F886F-DA6F-445E-BA83-C276646A0B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188903C5-DC11-483B-8BAA-25AB1D7A57F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188903C5-DC11-483B-8BAA-25AB1D7A57F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188903C5-DC11-483B-8BAA-25AB1D7A57F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188903C5-DC11-483B-8BAA-25AB1D7A57F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C1AEEFC-3559-4391-8909-F546D006A27C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C1AEEFC-3559-4391-8909-F546D006A27C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C1AEEFC-3559-4391-8909-F546D006A27C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C1AEEFC-3559-4391-8909-F546D006A27C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E564B23-43E0-44C7-B921-53C23C79CB79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E564B23-43E0-44C7-B921-53C23C79CB79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E564B23-43E0-44C7-B921-53C23C79CB79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E564B23-43E0-44C7-B921-53C23C79CB79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20BD3F8A-0948-4D9F-AAA6-84D366730169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20BD3F8A-0948-4D9F-AAA6-84D366730169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20BD3F8A-0948-4D9F-AAA6-84D366730169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20BD3F8A-0948-4D9F-AAA6-84D366730169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E2D3ED-A669-4ADB-892E-7B13C7B52CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E2D3ED-A669-4ADB-892E-7B13C7B52CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E2D3ED-A669-4ADB-892E-7B13C7B52CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E2D3ED-A669-4ADB-892E-7B13C7B52CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB96125C-8451-4E52-90EE-E815549F2E19}
+	EndGlobalSection
+EndGlobal
