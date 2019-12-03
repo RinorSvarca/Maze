@@ -55,10 +55,10 @@ namespace Maze.View
             _disableBackFaceCulling.Add(Enums.EntityType.Mercury);
             _disableBackFaceCulling.Add(Enums.EntityType.Mars);
 
-            _textures.Add(Enums.EntityType.Mercury, contentLoader.Load<ITexture2D>("mercury.jpg"));
-            _textures.Add(Enums.EntityType.Mars, contentLoader.Load<ITexture2D>("mars.jpg"));
+            _textures.Add(Enums.EntityType.Mercury, contentLoader.Load<ITexture2D>("mercury8.jpg"));
+            _textures.Add(Enums.EntityType.Mars, contentLoader.Load<ITexture2D>("mars8.jpg"));
             
-            _textures.Add(Enums.EntityType.Plane, contentLoader.Load<ITexture2D>("mercury.jpg"));
+            _textures.Add(Enums.EntityType.Plane, contentLoader.Load<ITexture2D>("haumea.jpg"));
 
 
             _deferred = _renderInstanceGroup.AddShader<Deferred>(new Deferred(contentLoader, _meshes));
