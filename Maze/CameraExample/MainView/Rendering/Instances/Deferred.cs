@@ -67,7 +67,7 @@ namespace Maze.View.Rendering.Instances
             }
         }
 
-        public void Draw(IRenderState renderState, ITransformation camera, Dictionary<Enums.EntityType, int> instanceCounts, Dictionary<Enums.EntityType, ITexture2D> textures, Dictionary<Enums.EntityType, ITexture2D> normalMaps,  List<Enums.EntityType> disableBackFaceCulling) //Dictionary<Enums.EntityType, ITexture2D> heightMaps,
+        public void Draw(IRenderState renderState, ITransformation camera, Dictionary<Enums.EntityType, int> instanceCounts, Dictionary<Enums.EntityType, ITexture2D> textures, Dictionary<Enums.EntityType, ITexture2D> normalMaps,  List<Enums.EntityType> disableBackFaceCulling)
         {
             _outputSurface.Activate();
             renderState.Set(new DepthTest(true));
@@ -92,25 +92,11 @@ namespace Maze.View.Rendering.Instances
                 if (normalMaps.ContainsKey(type))
                 {
                     _deferredProgram.ActivateTexture("normalMap", 1, normalMaps[type]);
-                    /*
-
-                    if (heightMaps.ContainsKey(type))
-                    {
-                        _deferredProgram.ActivateTexture("heightMap", 2, heightMaps[type]);
-                        _deferredProgram.Uniform("normalMapping", 0f);
-                        _deferredProgram.Uniform("paralaxMapping", 1f);
-                    }
-                    else
-                    {
-                        //_deferredProgram.ActivateTexture("heightMap", 2, _defaultMap);
-                        _deferredProgram.Uniform("normalMapping", 1f);
-                        _deferredProgram.Uniform("paralaxMapping", 0f);
-                    }*/
+                   
                 }
                 else
                 {
                     _deferredProgram.ActivateTexture("normalMap", 1, _defaultMap);
-                    //_deferredProgram.ActivateTexture("heightMap", 2, _defaultMap);
                     _deferredProgram.Uniform("normalMapping", 0f);
                     _deferredProgram.Uniform("paralaxMapping", 0f);
                 }
@@ -136,15 +122,7 @@ namespace Maze.View.Rendering.Instances
                 {
                     _deferredProgram.DeactivateTexture(0, textures[type]);
                 }
-
-                /*if (normalMaps.ContainsKey(type))
-                {
-                    if (heightMaps.ContainsKey(type))
-                    {
-                        _deferredProgram.DeactivateTexture(2, heightMaps[type]);
-                    }
-                    _deferredProgram.DeactivateTexture(1, normalMaps[type]);
-                }*/
+                
             }
 
             renderState.Set(new DepthTest(false));

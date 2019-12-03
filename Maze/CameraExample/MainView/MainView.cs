@@ -48,7 +48,7 @@ namespace Maze.View
             _meshes.Add(Enums.EntityType.Maze, sphere);
             _meshes.Add(Enums.EntityType.Plane, new TBNMesh(Meshes.CreatePlane(1, 1, 1, 1)));           
             _meshes.Add(Enums.EntityType.Mercury, contentLoader.Load<DefaultMesh>("icosphere.obj"));
-            _meshes.Add(Enums.EntityType.Mars, contentLoader.Load<DefaultMesh>("sphereSmooth.obj"));
+            _meshes.Add(Enums.EntityType.Mars, contentLoader.Load<DefaultMesh>("icosphere.obj"));
             
 
 
@@ -57,10 +57,9 @@ namespace Maze.View
 
             _textures.Add(Enums.EntityType.Mercury, contentLoader.Load<ITexture2D>("mercury.jpg"));
             _textures.Add(Enums.EntityType.Mars, contentLoader.Load<ITexture2D>("mars.jpg"));
+            
+            _textures.Add(Enums.EntityType.Plane, contentLoader.Load<ITexture2D>("mercury.jpg"));
 
-            _normalMaps.Add(Enums.EntityType.Plane, contentLoader.Load<ITexture2D>("mars.jpg"));
-
-            //_heightMaps.Add(Enums.EntityType.Type4, contentLoader.Load<ITexture2D>("heightMap.jpg"));
 
             _deferred = _renderInstanceGroup.AddShader<Deferred>(new Deferred(contentLoader, _meshes));
             _directShadowMap = _renderInstanceGroup.AddShader<DirectionalShadowMapping>(new DirectionalShadowMapping(contentLoader, _meshes));
@@ -93,11 +92,11 @@ namespace Maze.View
 
             _renderInstanceGroup.UpdateGeometry(arrTrans);
 
-            _deferred.Draw(_renderState, camera, _instanceCounts, _textures, _normalMaps,  _disableBackFaceCulling);//_heightMaps,
+            _deferred.Draw(_renderState, camera, _instanceCounts, _textures, _normalMaps,  _disableBackFaceCulling);
 
             _directShadowMap.Draw(_renderState, camera, _instanceCounts, _deferred.Depth, _lights[0].Direction, _disableBackFaceCulling);
 
-            _environmentMap.CreateMap(entities[2], _renderState, 0, arrTrans, _instanceCounts, _textures, _normalMaps,  _disableBackFaceCulling, _lights, new Vector3(0.1f), camera); //_heightMaps,
+            _environmentMap.CreateMap(entities[2], _renderState, 0, arrTrans, _instanceCounts, _textures, _normalMaps,  _disableBackFaceCulling, _lights, new Vector3(0.1f), camera);
             _environmentMap.Draw(_renderState, _deferred.Depth);
             _addEnvMap.Draw(_deferred.Color, _environmentMap.Output, 0.5f);
 
@@ -112,14 +111,14 @@ namespace Maze.View
             if (Bloom)
             {
                 _bloom.Draw(_addSkybox.Output);
-                //_ssaoWithBlur.Draw(_deferred.Depth, _bloom.Output);
+                _ssaoWithBlur.Draw(_deferred.Depth, _bloom.Output);
             }
             else
             {
                 _ssaoWithBlur.Draw(_deferred.Depth, _addSkybox.Output);
             }
 
-            TextureDrawer.Draw(_directShadowMap.Output);
+            TextureDrawer.Draw(_ssaoWithBlur.Output);
         }
 
         public void Resize(int width, int height)

@@ -85,7 +85,7 @@ namespace Maze.View.Rendering.Instances
             }
         }
 
-        public void CreateMap(ViewEntity entity, IRenderState renderState, int index, Dictionary<Enums.EntityType, Matrix4x4[]> transforms, Dictionary<Enums.EntityType, int> instanceCounts, Dictionary<Enums.EntityType, ITexture2D> textures, Dictionary<Enums.EntityType, ITexture2D> normalMaps,  List<Enums.EntityType> disableBackFaceCulling, List<LightSource> lightSources, Vector3 ambientColor, ITransformation camera) //Dictionary<Enums.EntityType, ITexture2D> heightMaps,
+        public void CreateMap(ViewEntity entity, IRenderState renderState, int index, Dictionary<Enums.EntityType, Matrix4x4[]> transforms, Dictionary<Enums.EntityType, int> instanceCounts, Dictionary<Enums.EntityType, ITexture2D> textures, Dictionary<Enums.EntityType, ITexture2D> normalMaps,  List<Enums.EntityType> disableBackFaceCulling, List<LightSource> lightSources, Vector3 ambientColor, ITransformation camera)
         {
             _entity = entity;
             _camera = camera;
@@ -102,7 +102,7 @@ namespace Maze.View.Rendering.Instances
             {
 
                 _positions[i].Location = position;
-                _deferred.Draw(renderState, _cameras[i], instanceCounts, textures, normalMaps,  disableBackFaceCulling); //heightMaps,
+                _deferred.Draw(renderState, _cameras[i], instanceCounts, textures, normalMaps,  disableBackFaceCulling);
                 _shadowMapping.Draw(renderState, _cameras[i], instanceCounts, _deferred.Depth, lightSources[0].Direction, disableBackFaceCulling);
                 _lighting.Draw(_cameras[i], _deferred.Color, _deferred.Normal, _deferred.Position, _shadowMapping.Output, lightSources, ambientColor);
                 _skybox.Draw(_cameras[i], 2);
